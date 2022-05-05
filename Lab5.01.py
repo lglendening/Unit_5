@@ -33,3 +33,14 @@ delete entries (key, value pairs) from the dictionary.
 get the entire dictionary printed to the screen.
 Lesson 6.01 did not cover all the techniques for manipulating dictionaries that you will need to program these features. Search for the necessary information in the [Python tutorial about dictionaries][1] and the [advanced Python documentation about dictionaries][2].
 '''
+my_dictionary = {
+'lol': 'Laugh out Loud',
+'brb': 'be right back',
+'gtg': 'got to go',
+'ikr': 'i know right',
+'idk': 'i dont know',
+'idek': 'i dont even know'
+}
+
+choice = input("What would you like to know the abrevation for?  [lol, brb, gtg, ikr, idk, idek]   ")
+print(f"{choice} means {my_dictionary[choice]}")

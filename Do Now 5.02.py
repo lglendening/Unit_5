@@ -46,3 +46,23 @@ Write down what the second line does.
 
 What is different between my_dictionary.pop('bunnies') and my_dictionary.pop('bunnies', None)?
 '''
+# my_dictionary = {
+# 'kittens': 'cute animals'
+# }
+# my_dictionary['kittens'] = 'p. cute'
+# print(my_dictionary)
+
+# my_dictionary = {}
+# my_dictionary['puppies'] = 'baby dogs'
+# print(my_dictionary)
+
+my_dictionary = {
+'kittens': 'cute animals',
+'puppies': 'baby dogs'
+}
+
+my_dictionary.pop('kittens')
+print(my_dictionary)
+my_dictionary.pop('bunnies')
+my_dictionary.pop('bunnies', None)
+
