@@ -43,3 +43,41 @@ Use split() to allow the user to input add Friday watch tv and relax.  Create a 
 that doesn't allow any duplicates across any of the days. Make sure when you add a to-do item that it 
 doesn't exist in the to-do lists of any of the days before adding.
 '''
+
+
+def add():
+    day_choice = input("What day would you like to add a task to?    ")
+    task_choice = input(f"What task would you like to do on {day_choice}")
+
+    if day_choice in week_long_to_do_list:
+        if task_choice in week_long_to_do_list[day_choice]:
+            print(f"{task_choice} is already schefualed on that day")
+        else:
+            week_long_to_do_list[day_choice].append(task_choice)
+    else:
+        week_long_to_do_list[day_choice] = [task_choice]
+
+
+def get():
+    get_day = input("What day would you like to see the tasks for? ")
+
+    if get_day in week_long_to_do_list:
+        week_long_to_do_list[get_day]
+    else:
+        print(f"YOu dont have anything scheduled for {get_day}. ")
+    
+week_long_to_do_list = {}
+print(week_long_to_do_list)
+
+
+
+
+while True:
+    user_choice = input("What to do with the 'to do list' (add or get)?      ")
+
+    if user_choice == "add":
+        add()
+    if user_choice == "get":
+        get()
+
+    print(week_long_to_do_list)
