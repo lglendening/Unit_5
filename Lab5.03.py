@@ -39,7 +39,7 @@ What would you like to do('add' or 'get')?
 -Bonus-
 -------
 It's a bit tedious for the user to have to type in three different lines to add an item to a to-do list. 
-Use split() to allow the user to input add Friday watch tv and relax.  Create a variation of the program 
+Use split() to allow the user to input add Fokn riday watch tv and relax.  Create a variation of the program 
 that doesn't allow any duplicates across any of the days. Make sure when you add a to-do item that it 
 doesn't exist in the to-do lists of any of the days before adding.
 '''
@@ -47,7 +47,7 @@ doesn't exist in the to-do lists of any of the days before adding.
 
 def add():
     day_choice = input("What day would you like to add a task to?    ")
-    task_choice = input(f"What task would you like to do on {day_choice}")
+    task_choice = input(f"What task would you like to do on {day_choice}?   ")
 
     if day_choice in week_long_to_do_list:
         if task_choice in week_long_to_do_list[day_choice]:

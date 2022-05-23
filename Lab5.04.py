@@ -35,25 +35,25 @@ Here's an example of the program output with the text passage set to the opening
 Seuss's poem Green Eggs and Ham:
 
 I am Sam. I am Sam. Sam-I-am.
-​
+
 That Sam-I-am! That Sam-I-am!
 I do not like that Sam-I-am!
-​
+
 Would you like green eggs and ham?
-​
+
 I do not like them, Sam-I-am.
 I do not like green eggs and ham.
-​
+
 Would you like them here or there?
-​
+
 I would not like them here or there.
 I would not like them anywhere.
 I do not like green eggs and ham.
 I do not like them, Sam-I-am.
-​
+
 Would you like them in a house?
 Would you like them with a mouse?
-​
+
 I do not like them in a house.
 I do not like them with a mouse.
 I do not like them here or there.
@@ -75,3 +75,76 @@ most frequent to least frequent.
 
 Change the code to find the least frequent words.
 '''
+
+dr_sus_para = ''' 
+I am Sam. I am Sam. Sam-I-am.
+That Sam-I-am! That Sam I am!
+Would you like green eggs and ham?
+I do not like them, Sam I am.
+I do not like green eggs and ham.
+Would you like them here or there?
+I would not like them here or there.
+I would not like them anywhere.
+I do not like green eggs and ham.
+I do not like them Sam I am.
+Would you like them in a house?
+Would you like them with a mouse?
+I do not like them in a house.
+I do not like them with a mouse.
+I do not like them here or there.
+I do not like them anywhere.
+I do not like green eggs and ham.
+I do not like them Sam I am.
+'''
+
+dr_sus_para_dict = {}
+
+def text_to_word_list(passage):
+
+    #make letters lowercase
+    my_paragraph_lowercase = passage.lower()
+
+    #remove all periods
+    my_paragraph_lower_no_punctuation = my_paragraph_lowercase.replace("!", " ")
+    my_paragraph_lower_no_punctuation = my_paragraph_lower_no_punctuation.replace(",", " ")
+    my_paragraph_lower_no_punctuation = my_paragraph_lower_no_punctuation.replace("-", " ")
+
+    my_paragraph_lower_no_punctuation = my_paragraph_lower_no_punctuation.replace("?", " ")
+    my_paragraph_lower_no_punctuation = my_paragraph_lower_no_punctuation.replace(".", " ")
+
+    my_paragraph_lower_no_punctuation = my_paragraph_lower_no_punctuation.replace("\n", " ")
+
+    #convert paragraph into a list of indibidual strings
+    word_list = my_paragraph_lower_no_punctuation.split(" ")
+
+    return word_list
+
+def count_frequencys(word_list):
+    for word in word_list:
+        if word in dr_sus_para_dict:
+            dr_sus_para_dict[word] += 1
+        else:
+            dr_sus_para_dict[word] = 1
+
+
+def find_max_valued_key(dr_sus_para_dict):
+    max_key = -1
+    for key in dr_sus_para_dict:
+        if dr_sus_para_dict[key] > max_key:
+            max_key = dr_sus_para_dict[key]
+
+    return max_key
+
+
+
+
+list_of_words = text_to_word_list(dr_sus_para)
+count_frequencys(list_of_words)
+print(dr_sus_para_dict)
+print(find_max_valued_key(dr_sus_para_dict))
+
+
+
+
+
+
